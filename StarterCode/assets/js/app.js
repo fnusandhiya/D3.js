@@ -89,7 +89,11 @@ function makeResponsive() {
             .attr("stroke-width", "1")
             .attr("stroke", "black");
 
-          
+        circlesGroup.append("text")
+            .text(function(d){return d.abbr})
+            .attr("font-size", 10)
+            .attr('dx', -10)//positions text towards the left of the center of the circle
+            .attr('dy',4)
 
 
     });
