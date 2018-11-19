@@ -61,6 +61,22 @@ function makeResponsive() {
         chartGroup.append("g")
             .call(yAxis);
 
+        chartGroup
+            .append("text")             
+            .attr("x", width / 2 )
+            .attr("y",  height + margin.top + 20 )
+            .style("text-anchor", "middle")
+            .text("Age(median)");
+            
+        chartGroup
+            .append("text")
+            .attr("transform", "rotate(-90)")
+            .attr("y", 0 - margin.left)
+            .attr("x",0 - (height / 2))
+            .attr("dy", "1em")
+            .style("text-anchor", "middle")
+            .text("Poverty(%)");
+
         // append circles
         var circlesGroup = chartGroup.selectAll("circle")
             .data(f)
