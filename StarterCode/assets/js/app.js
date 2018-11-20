@@ -104,7 +104,7 @@ function makeResponsive() {
         // Step 1: Initialize Tooltip
         var toolTip = d3.tip()
             .attr("class", "d3-tip")
-            .offset([80, -60])
+            .offset([-10, -60])
             .html(function(d) {
                 return (`<h6>${d.state}</h6><h6>Poverty: ${d.poverty}%</h6><h6>Obesity: ${d.obesity}%</h6>`);
             });
