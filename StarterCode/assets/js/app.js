@@ -103,10 +103,10 @@ function makeResponsive() {
 
         // Step 1: Initialize Tooltip
         var toolTip = d3.tip()
-            .attr("class", "tooltip")
+            .attr("class", "d3-tip")
             .offset([80, -60])
             .html(function(d) {
-                return (`<strong>${d.healthcare}<strong><hr>${d.poverty}`);
+                return (`<h6>${d.state}</h6><h6>Poverty: ${d.poverty}%</h6><h6>Obesity: ${d.obesity}%</h6>`);
             });
 
         // Step 2: Create the tooltip in chartGroup.
@@ -118,7 +118,7 @@ function makeResponsive() {
         })
         // Step 4: Create "mouseout" event listener to hide tooltip
         .on("mouseout", function(d) {
-            toolTip.hide(d);
+            toolTip.hide(d, this);
         });
 
 
